@@ -14,11 +14,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import java.nio.file.WatchEvent
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    navController: NavController
+) {
     Column(
         modifier = Modifier
             .fillMaxSize(),
@@ -34,7 +38,9 @@ fun MainScreen() {
             modifier = Modifier
                 .padding(20.dp)
         )
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            navController.navigate(route = Screen.AddTransactionScreen.route)
+        }) {
             Text(text = "Add Income/Transaction")
         }
     }
@@ -43,5 +49,5 @@ fun MainScreen() {
 @Preview (showBackground = true)
 @Composable
 fun MainScreenPreview() {
-    MainScreen()
+    MainScreen(navController = rememberNavController())
 }
