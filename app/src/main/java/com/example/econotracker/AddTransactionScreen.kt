@@ -69,7 +69,9 @@ fun AddTransactionScreen(
                     .padding(10.dp)
             )
         }
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            navController.navigate(route = Screen.OverviewScreen.route)
+        }) {
             Text(
                 text = "Add Transaction",
                 color = Color.White

@@ -1,5 +1,6 @@
 package com.example.econotracker
 
+import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
@@ -50,12 +52,22 @@ fun OverViewScreen(
                 discription = "Test"
             )
         }
-        Row() {
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 10.dp, bottom = 20.dp, top = 10.dp)
+        ) {
             Column {
                 Row {
-                    Text(text = "Total")
+                    Text(
+                        text = "Total"
+                    )
                 }
-                Text(text = "RS")
+                Text(
+                    text = "RS",
+                    fontSize = 20.sp
+                )
             }
         }
         Text(
@@ -78,7 +90,7 @@ fun OverViewScreen(
                     text = "Description",
                     fontWeight = FontWeight.Bold
                     )
-                Text(text = "")
+                Text("Title")
                 Text(text = "")
             }
             Column(
